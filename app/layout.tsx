@@ -1,7 +1,6 @@
 import './globals.css'
 import Sidebar from '../components/sidebar';
 
-
 import { IBM_Plex_Sans } from 'next/font/google'
 
 const ibmPlexSans = IBM_Plex_Sans({

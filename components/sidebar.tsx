@@ -1,4 +1,5 @@
-"use client";
+"use client"
+import * as React from "react";
 
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
@@ -9,6 +10,7 @@ import {
   AiOutlineDribbble,
   AiOutlineInstagram,
 } from "react-icons/ai";
+import MenuButton from "./menuButton";
 
 const navItems = {
   "/": {
@@ -82,18 +84,22 @@ export default function Navbar() {
     pathname = "/blog";
   }
 
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
+    
     <aside className="w-full md:w-[200px] md:flex-shrink-0 md:px-[30px] bg-sport-black">
       <div className="md:sticky md:top-10 md:h-[90vh]">
         <div className="mx-auto md:mx-0 mb-16">
           <Logo />
+
+          <MenuButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
         </div>
         <LayoutGroup>
           <nav
             className="flex flex-row md:flex-col items-start relative space-y-3 "
             id="nav"
           >
-            
               {Object.entries(navItems).map(([path, { name }]) => {
                 const isActive = path === pathname;
                 return (
