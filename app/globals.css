@@ -2,12 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary-color: rgba(20, 19, 19, 1)
-}
-
-
-
-aside{
-  background-color: var(--primary-color);
+.bg-gradient-custom {
+  @apply bg-gradient-to-l;
+  background-image: linear-gradient(to left, rgba(255, 177, 71, 1), rgba(255, 108, 99, 1), rgba(184, 106, 223, 1));
 }

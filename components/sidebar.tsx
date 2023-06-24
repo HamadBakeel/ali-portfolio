@@ -1,28 +1,33 @@
-'use client';
+"use client";
 
-import clsx from 'clsx';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import { LayoutGroup, motion } from 'framer-motion';
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { LayoutGroup, motion } from "framer-motion";
+import {
+  AiOutlineBehance,
+  AiOutlineDribbble,
+  AiOutlineInstagram,
+} from "react-icons/ai";
 
 const navItems = {
-  '/': {
-    name: 'home',
+  "/": {
+    name: "home",
   },
-  '/about': {
-    name: 'about',
+  "/about": {
+    name: "about",
   },
-  '/blogs': {
-    name: 'blogs',
+  "/blogs": {
+    name: "blogs",
   },
-  '/works': {
-    name: 'works',
+  "/works": {
+    name: "works",
   },
-  '/services': {
-    name: 'services',
+  "/services": {
+    name: "services",
   },
-  '/contact': {
-    name: 'contact',
+  "/contact": {
+    name: "contact",
   },
 };
 
@@ -30,7 +35,7 @@ function Logo() {
   return (
     <Link aria-label="Lee Robinson" href="/">
       <motion.svg
-        className="text-black dark:text-white h-[25px] md:h-[37px]"
+        className="text-white h-[25px] md:h-[37px]"
         width="25"
         height="37"
         viewBox="0 0 232 316"
@@ -48,7 +53,7 @@ function Logo() {
           }}
           transition={{
             duration: 0.5,
-            type: 'spring',
+            type: "spring",
             stiffness: 50,
           }}
           d="M39 316V0"
@@ -60,7 +65,7 @@ function Logo() {
           animate={{ x: 0, opacity: 1 }}
           transition={{
             duration: 0.5,
-            type: 'spring',
+            type: "spring",
             stiffness: 50,
           }}
           d="M232 314.998H129.852L232 232.887V314.998Z"
@@ -72,23 +77,23 @@ function Logo() {
 }
 
 export default function Navbar() {
-  let pathname = usePathname() || '/';
-  if (pathname.includes('/blog/')) {
-    pathname = '/blog';
+  let pathname = usePathname() || "/";
+  if (pathname.includes("/blog/")) {
+    pathname = "/blog";
   }
 
   return (
-    <aside className="md:w-[150px] md:flex-shrink-0 -mx-4 md:mx-0 md:px-0 font-serif">
-      <div className="lg:sticky lg:top-20">
-        <div className="ml-2 md:ml-[12px] mb-2 px-4 md:px-0 md:mb-8 space-y-10 flex flex-col md:flex-row items-start ">
+    <aside className="w-full md:w-[200px] md:flex-shrink-0 md:px-[30px] bg-sport-black">
+      <div className="md:sticky md:top-10 md:h-[90vh]">
+        <div className="mx-auto md:mx-0 mb-16">
           <Logo />
         </div>
         <LayoutGroup>
           <nav
-            className="flex flex-row md:flex-col items-start relative px-4 md:px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+            className="flex flex-row md:flex-col items-start relative space-y-3 "
             id="nav"
           >
-            <div className="flex flex-row md:flex-col space-x-0 pr-10 mb-2 mt-2 md:mt-0">
+            
               {Object.entries(navItems).map(([path, { name }]) => {
                 const isActive = path === pathname;
                 return (
@@ -96,23 +101,25 @@ export default function Navbar() {
                     key={path}
                     href={path}
                     className={clsx(
-                      'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
+                      "transition-all text-white font-[200] flex align-middle tracking-wide text-[14px] uppercase",
                       {
-                        'text-neutral-500': !isActive,
-                        'font-bold': isActive,
+                        "text-neutral-500": !isActive,
+                        "!font-semibold": isActive,
                       }
                     )}
                   >
-                    <span className="relative py-[5px] px-[10px]">
+                    <span className="relative">
                       {name}
                       {path === pathname ? (
                         <motion.div
-                          className="absolute inset-0 bg-neutral-100 dark:bg-neutral-800 rounded-md z-[-1]"
-                          layoutId="sidebar"
+                          className="absolute h-[3px] top-1/2 -translate-y-1/2 bg-gradient-custom z-[-1]"
+                          initial={{width: 0}}
+                          animate={{width: '100%'}}
                           transition={{
-                            type: 'spring',
+                            type: "spring",
                             stiffness: 350,
                             damping: 30,
+                            delay: 0.25
                           }}
                         />
                       ) : null}
@@ -120,9 +127,23 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-            </div>
+            
           </nav>
         </LayoutGroup>
+        <div className="absolute bottom-0 flex flex-col gap-6">
+          <div className="flex gap-2 flex-col">
+            <a href="#">
+              <AiOutlineBehance className="text-black bg-white rounded-full text-xl p-1 w-7 h-7 hover:bg-black hover:text-white transition-all flex items-center justify-center" />
+            </a>
+            <a href="#">
+              <AiOutlineDribbble className="text-black bg-white rounded-full text-xl p-1 w-7 h-7 hover:bg-black hover:text-white transition-all flex items-center justify-center" />
+            </a>
+            <a href="#">
+              <AiOutlineInstagram className="text-black bg-white rounded-full text-xl p-1 w-7 h-7 hover:bg-black hover:text-white transition-all flex items-center justify-center" />
+            </a>
+          </div>
+          <p className="text-white text-[12px] font-[300] ">Copyright @2023 Ali Abdu. All rights reserved</p>
+        </div>
       </div>
     </aside>
   );

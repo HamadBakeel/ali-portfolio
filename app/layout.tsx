@@ -2,9 +2,13 @@ import './globals.css'
 import Sidebar from '../components/sidebar';
 
 
-import { Inter } from 'next/font/google'
+import { IBM_Plex_Sans } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'], 
+  style: ['italic', 'normal'],
+  weight: ['100', '200', '300', '400', '500', '600', '700']
+})
 
 export const metadata = {
   title: 'Ali AL-roaini',
@@ -18,12 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className+" flex h-screen"}>
+      <body className={ibmPlexSans.className+" flex min-h-screen"}>
         <Sidebar/>
         <div className='pt-[60px] pl-[80px]'>
           {children}
         </div>
-
       </body>
     </html>
   )
