@@ -25,6 +25,7 @@ export default function MenuButton({ isOpen, onClick }: MenuButtonProps) {
       onClick={onClick}
       initial={false}
       animate={isOpen ? "open" : "closed"}
+      className="fixed top-4 right-4 z-10"
     >
       <motion.svg
         width="20"

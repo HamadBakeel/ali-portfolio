@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={ibmPlexSans.className+" flex min-h-screen"}>
+      <body className={ibmPlexSans.className+" flex min-h-screen overflow-x-hidden"}>
         <Sidebar/>
         <div className='pt-[60px] pl-[80px]'>
           {children}
