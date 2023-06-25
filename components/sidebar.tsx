@@ -42,27 +42,51 @@ export default function Navbar() {
   }
 
   const [isOpen, setIsOpen] = React.useState(false);
-  const isSmallScreen = useMedia("(max-width:768px)");
+  const [isSmallScreen, setIsSmallScreen] = React.useState(false);
+  const [variants, setVariants] = React.useState({});
+  const [isMounted, setIsMounted] = React.useState(false);
+  const [transition, setTransition] = React.useState({});
 
-  const variants = {
-    hidden: { y: "-110vh"},
-    visible: { y: "0" }
-  };
+  React.useEffect(() =>{
+    const width = window.innerWidth;
+    if(width <= 768){
+      setIsSmallScreen(true);
+      setVariants({
+        hidden: { y: "-110vh"},
+        visible: { y: "0" }
+      })
+      setTransition({duration: 0})
+    }else{
+      setIsSmallScreen(false);
+      setVariants({
+        hidden: { y: "0"},
+        visible: { y: "0" }
+      })
+    }
 
+    setIsMounted(true);
+  }, [isSmallScreen, setIsSmallScreen])
+
+  const showSidebar = ()=>{
+    setIsOpen(!isOpen)
+    setTransition({})
+  }
+  
 
   return (
     <>
       {
         isSmallScreen
         &&
-        <MenuButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+        <MenuButton isOpen={isOpen} onClick={showSidebar} />
       }
 
       <motion.aside 
-        className="w-screen md:w-[200px] md:flex-shrink-0 md:px-[30px] bg-sport-black absolute md:relative"
+        className={`w-screen md:w-[200px] md:flex-shrink-0 md:px-[30px] bg-sport-black absolute md:relative`}
         initial={!isSmallScreen ? "visible" : "hidden"}
-        animate={!isSmallScreen || isOpen ? "visible" : "hidden"}
+        animate={isOpen ? "visible" : "hidden"}
         variants={variants}  
+        transition={transition}
       >
         <div className="md:sticky md:top-10 h-screen md:h-[90vh]">
           <div className="mx-auto md:mx-0 mb-24 md:mb-16 w-fit md:w-full mt-8 md:mt-0">

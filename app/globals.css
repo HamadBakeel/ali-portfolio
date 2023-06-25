@@ -6,3 +6,9 @@
   @apply bg-gradient-to-l;
   background-image: linear-gradient(to left, rgba(255, 177, 71, 1), rgba(255, 108, 99, 1), rgba(184, 106, 223, 1));
 }
+
+@media (max-width: 768px) { 
+  aside{
+    transform: translateY(-110vh) translateZ(0px);
+  }
+}
