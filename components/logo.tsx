@@ -14,12 +14,10 @@ export default function Logo() {
       >
         <motion.path
           initial={{
-            // opacity: 0,
-            pathLength: 0,
+            opacity: 0,
           }}
           animate={{
-            // opacity: 1,
-            pathLength: 1,
+            opacity: 1,
           }}
           transition={{
             duration: 0.5,
