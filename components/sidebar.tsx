@@ -71,7 +71,15 @@ export default function Navbar() {
     setIsOpen(!isOpen)
     setTransition({})
   }
-  
+  const hideSidebar = ()=>{
+    const width = window.innerWidth;
+    if(width <= 768){
+      setIsOpen(!isOpen)
+      console.log('====================================');
+      console.log();
+      console.log('====================================');
+    }
+  }
 
   return (
     <>
@@ -104,6 +112,7 @@ export default function Navbar() {
                     <Link
                       key={path}
                       href={path}
+                      onClick={hideSidebar}
                       className={clsx(
                         "transition-all text-white font-[200] flex align-middle tracking-wide text-xl md:text-[14px] uppercase",
                         {
