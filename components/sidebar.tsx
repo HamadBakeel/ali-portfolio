@@ -44,7 +44,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isSmallScreen, setIsSmallScreen] = React.useState(false);
   const [variants, setVariants] = React.useState({});
-  const [isMounted, setIsMounted] = React.useState(false);
   const [transition, setTransition] = React.useState({});
 
   React.useEffect(() =>{
@@ -63,8 +62,6 @@ export default function Navbar() {
         visible: { y: "0" }
       })
     }
-
-    setIsMounted(true);
   }, [isSmallScreen, setIsSmallScreen])
 
   const showSidebar = ()=>{
@@ -75,9 +72,6 @@ export default function Navbar() {
     const width = window.innerWidth;
     if(width <= 768){
       setIsOpen(!isOpen)
-      console.log('====================================');
-      console.log();
-      console.log('====================================');
     }
   }
 

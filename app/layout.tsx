@@ -17,13 +17,13 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode, 
 }) {
   return (
     <html lang="en">
       <body className={ibmPlexSans.className+" flex min-h-screen overflow-x-hidden"}>
         <Sidebar/>
-        <div className='pt-[60px] pl-[80px]'>
+        <div className='w-full'>
           {children}
         </div>
       </body>

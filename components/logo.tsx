@@ -36,9 +36,9 @@ export default function Logo() {
             y2="27.2935"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FFB147" />
-            <stop offset="0.520264" stop-color="#FF6C63" />
-            <stop offset="1" stop-color="#B86ADF" />
+            <stop stopColor="#FFB147" />
+            <stop offset="0.520264" stopColor="#FF6C63" />
+            <stop offset="1" stopColor="#B86ADF" />
           </linearGradient>
         </defs>
       </motion.svg>
