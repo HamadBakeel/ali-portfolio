@@ -86,7 +86,15 @@ export default function Navbar() {
       {
         isSmallScreen
         &&
-        <MenuButton isOpen={isOpen} onClick={showSidebar} />
+        <div className={`fixed top-0 left-0 z-20 flex justify-between w-screen pr-6 pl-5 py-4 ${!isOpen ? 'backdrop-blur-sm': ''}`}>        
+          <span 
+            className={`${isOpen ? 'invisible': ''}`}
+          >
+            <Logo />
+          </span>
+          
+          <MenuButton isOpen={isOpen} onClick={showSidebar} />
+        </div>
       }
 
       <motion.aside 
