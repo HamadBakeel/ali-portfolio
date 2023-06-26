@@ -1,7 +1,7 @@
 "use client"
 import * as React from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import { useMedia } from "react-use";
+import { motion } from "framer-motion";
+
 
 import clsx from "clsx";
 import { usePathname } from "next/navigation";

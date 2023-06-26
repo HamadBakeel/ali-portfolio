@@ -1,13 +1,20 @@
+"use client";
 import Image from "next/image";
+import { AiOutlineDribbble, AiOutlineInstagram } from "react-icons/ai";
+import { BiLogoFacebook } from "react-icons/bi";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   return (
-    <main className="grid grid-cols-1 md:grid-cols-2 w-full min-h-screen items-center justify-items-center px-[18px] py-[80px] md:px-[4vw] lg:px-[6vw] xl:px-[10vw]">
+    <main className="grid grid-cols-1 md:grid-cols-2 w-full min-h-screen items-center justify-items-center px-[18px] py-[80px] md:px-[4vw] lg:px-[6vw] xl:px-[10vw] md:py-0">
       <section className="relative isolate">
         <h1 className=" text-[50px] md:text-[60px] uppercase leading-[55px] mb-4">
           My name <br /> is{" "}
           <span className=" font-extrabold">
-            Ali <br className=" hidden md:block"/> Abdu...
+            Ali <br className=" hidden md:block" /> Abdu...
           </span>
         </h1>
         <h2 className=" italic font-bold text-xl md:text-[initial]">
@@ -32,7 +39,7 @@ export default function Home() {
         >
           Let’s talk with me
           <Image
-          className=" w-[25px] md:w-[20px]"
+            className=" w-[25px] md:w-[20px]"
             src="/assets/icons/colored-arrow.svg"
             alt=""
             width={15}
@@ -81,6 +88,60 @@ export default function Home() {
           height={450}
         />
       </section>
+
+      <div className="absolute bottom-4 md:bottom-[initial] md:right-[1vw] lg:right-[2vw] xl:right-[3vw] flex flex-row md:flex-col gap-6">
+        <div className="flex flex-row-reverse gap-4 md:flex-col justify-center w-screen md:w-fit">
+          <motion.a
+            href="#"
+            initial={{ transform: "rotate(-180deg)", y: -100, opacity: 0 }}
+            animate={{
+              transform: isMobile ? "rotate(0)" : "rotate(-90deg)",
+              y: 0,
+              opacity: 1,
+            }}
+            whileHover={{ transform: "rotate(0)" }}
+          >
+            <BiLogoFacebook className="rounded-full border border-[#ccc] p-1 w-7 h-7 md:w-6 md:h-6 flex items-center justify-center" />
+          </motion.a>
+          <motion.a
+            href="#"
+            initial={{ transform: "rotate(-180deg)", y: -100, opacity: 0 }}
+            animate={{
+              transform: isMobile ? "rotate(0)" : "rotate(-90deg)",
+              y: 0,
+              opacity: 1,
+            }}
+            whileHover={{ transform: "rotate(0)" }}
+          >
+            <AiOutlineDribbble className="rounded-full border border-[#ccc] p-1 w-7 h-7 md:w-6 md:h-6 flex items-center justify-center" />
+          </motion.a>
+          <motion.a
+            href="#"
+            initial={{ transform: "rotate(-180deg)", y: -100, opacity: 0 }}
+            animate={{
+              transform: isMobile ? "rotate(0)" : "rotate(-90deg)",
+              y: 0,
+              opacity: 1,
+            }}
+            whileHover={{ transform: "rotate(0)" }}
+          >
+            <AiOutlineInstagram className="rounded-full border border-[#ccc] p-1 w-7 h-7 md:w-6 md:h-6 flex items-center justify-center" />
+          </motion.a>
+
+          <motion.div
+            className="m-auto w-[1px] bg-[#141313] opacity-30 hidden md:block"
+            initial={{ height: 0 }}
+            animate={{ height: "100px" }}
+            transition={{
+              type: "spring",
+              stiffness: 350,
+              damping: 30,
+              delay: 0.25,
+            }}
+          />
+        </div>
+        {/*text-black bg-white hover:bg-black hover:text-white transition-all */}
+      </div>
     </main>
   );
 }
