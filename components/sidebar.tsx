@@ -92,7 +92,7 @@ export default function Navbar() {
       }
 
       <motion.aside 
-        className={`w-screen md:w-[200px] md:flex-shrink-0 md:px-[30px] bg-sport-black absolute md:relative`}
+        className={`w-screen md:w-[200px] md:flex-shrink-0 md:px-[30px] bg-sport-black z-10 absolute md:relative`}
         initial={!isSmallScreen ? "visible" : "hidden"}
         animate={isOpen ? "visible" : "hidden"}
         variants={variants}  
