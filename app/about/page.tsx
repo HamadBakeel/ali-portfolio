@@ -3,8 +3,8 @@ import React from "react";
 
 function About() {
   return (
-    <main className="w-full min-h-screen px-[18px] py-[80px] md:px-[3vw] lg:px-[5vw] xl:px-[7vw] ">
-      <section className="grid grid-cols-1 md:grid-cols-12">
+    <main className="w-full min-h-screen pt-24 max-w-screen-xl">
+      <section className="grid grid-cols-1 md:grid-cols-11 px-[18px] md:px-[3vw] lg:px-[5vw] xl:px-[7vw]">
         <div className=" col-span-4">
           <h1 className=" italic font-bold mb-1">Nice to meet you!</h1>
           <h2 className=" uppercase text-[2.5rem] font-bold">welcome to...</h2>
@@ -131,7 +131,65 @@ function About() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2"></section>
+      <section
+        className="grid grid-cols-1 md:grid-cols-12 mt-20 pt-24 pb-16 
+        px-[18px] md:px-[3vw] lg:px-[5vw] xl:px-[7vw]
+        mr-[18px] md:mr-[3vw] lg:mr-[5vw] xl:mr-[7vw]
+        "
+        style={{
+          background:
+            "linear-gradient(273deg, #FFB147 0%, #FF6C63 52.03%, #B86ADF 100%);",
+        }}
+      >
+        <div className=" col-span-5">
+          <h3 className="italic text-white text-sm font-semibold mb-2">Experience</h3>
+          <h4 className="uppercase text-white font-bold text-4xl mb-5">my experience</h4>
+          <p className=" text-sm text-white">
+            Hello there! My name is Ali Abdu. <br /> I am a Product Designer, and
+            I&#39;m very passionate and dedicated to my work.
+          </p>
+          <button
+            className="
+          bg-sport-black
+          hover:bg-white hover:text-black transition text-white
+           md:text-sm flex justify-center items-center gap-2
+           mx-auto md:mx-0 mb-6 px-4 py-4 md:px-6 md:py-3 mt-2 md:mt-8"
+          >
+            Download my resume
+            <Image
+              className=" w-[25px] md:w-[20px]"
+              src="/assets/icons/colored-arrow.svg"
+              alt=""
+              width={15}
+              height={15}
+            />
+          </button>
+        </div>
+        <div className=" col-span-1"></div>
+        <div className=" col-span-6">
+          <div className="text-white border-b border-white border-opacity-25 mb-7">
+            <div className=" flex justify-between text-sm">
+              <span className=" italic font-semibold">-2018 - Present</span>
+              <span className=" text-xs font-semibold">-One Graphics</span>
+            </div>
+            <p className=" text-2xl uppercase font-bold mb-3 mt-2">lead product designer</p>
+          </div>
+          <div className="text-white border-b border-white border-opacity-25 mb-7">
+            <div className=" flex justify-between text-sm">
+              <span className=" italic font-semibold">-2018 - 2010</span>
+              <span className=" text-xs font-semibold">-One Graphics</span>
+            </div>
+            <p className=" text-2xl uppercase font-bold mb-3 mt-2">senior UX/UI designer</p>
+          </div>
+          <div className="text-white border-b border-white border-opacity-25 mb-7">
+            <div className=" flex justify-between text-sm">
+              <span className=" italic font-semibold">-2008 - 2006</span>
+              <span className=" text-xs font-semibold">-Otek</span>
+            </div>
+            <p className=" text-2xl uppercase font-bold mb-3 mt-2">UX/UI designer</p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
