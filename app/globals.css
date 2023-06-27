@@ -4,13 +4,22 @@
 
 *{
   --background-gradient: linear-gradient(to left, rgba(255, 177, 71, 1), rgba(255, 108, 99, 1), rgba(184, 106, 223, 1));
+
 }
 
 .bg-gradient-custom {
   @apply bg-gradient-to-l;
   background-image: var(--background-gradient);
 }
-
+.text-gradient-custom {
+  @apply bg-gradient-to-l;
+  background-image: var(--background-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.clip-polygon {
+  clip-path: polygon(0 1%, 100% 1%, 100% 100%, 0% 100%);
+}
 @media (max-width: 768px) { 
   aside{
     transform: translateY(-110vh) translateZ(0px);
