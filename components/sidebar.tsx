@@ -21,14 +21,14 @@ const navItems = {
   "/about": {
     name: "about",
   },
-  "/blogs": {
-    name: "blogs",
+  "/services": {
+    name: "services",
   },
   "/works": {
     name: "works",
   },
-  "/services": {
-    name: "services",
+  "/blogs": {
+    name: "blogs",
   },
   "/contact": {
     name: "contact",
