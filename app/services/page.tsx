@@ -4,6 +4,8 @@ import React from "react";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import PageTitle from "@/components/pageTitle";
+import PageSubtitle from "@/components/pageSubtitle";
 
 function Services() {
   const [expanded, setExpanded] = useState<number>(0);
@@ -52,8 +54,8 @@ function Services() {
 
   return (
     <main className="w-full min-h-screen pt-24 pb-10 px-8 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl transition">
-      <h1 className=" italic font-bold mb-1">Services</h1>
-      <h2 className=" uppercase text-[2.5rem] font-bold">my specialties</h2>
+      <PageTitle text="Services"/>
+      <PageSubtitle text="my specialties"/>
 
       <section className=" mt-8">
         {services.map((service) => (

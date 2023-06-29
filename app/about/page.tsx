@@ -1,13 +1,16 @@
 import Image from "next/image";
 import React from "react";
 
+import PageTitle from "@/components/pageTitle";
+import PageSubtitle from "@/components/pageSubtitle";
 function About() {
   return (
     <main className="w-full min-h-screen pt-24 max-w-screen-xl">
       <section className="grid grid-cols-1 md:grid-cols-11 px-8 md:px-[3vw] lg:px-[5vw] xl:px-[7vw]">
         <div className=" col-span-4">
-          <h1 className=" italic font-bold mb-1">Nice to meet you!</h1>
-          <h2 className=" uppercase text-[2.5rem] font-bold">welcome to...</h2>
+          <h1></h1>
+          <PageTitle text="Nice to meet you!"/>
+          <PageSubtitle text="welcome to..."/>
           <Image
             className=" w-full mb-4 block m-auto clip-polygon"
             src="/assets/ali/about-image.svg"
