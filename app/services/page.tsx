@@ -51,16 +51,21 @@ function Services() {
   ];
 
   return (
-    <main className="w-full min-h-screen pt-24 px-8 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl transition">
-      {services.map((service) => (
-        <Accordion
-          key={service.id}
-          i={service.id}
-          expanded={expanded}
-          setExpanded={setExpanded}
-          data={service.data}
-        />
-      ))}
+    <main className="w-full min-h-screen py-24 px-8 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl transition">
+      <h1 className=" italic font-bold mb-1">Services</h1>
+      <h2 className=" uppercase text-[2.5rem] font-bold">my specialties</h2>
+
+      <section className=" mt-8">
+        {services.map((service) => (
+          <Accordion
+            key={service.id}
+            i={service.id}
+            expanded={expanded}
+            setExpanded={setExpanded}
+            data={service.data}
+          />
+        ))}
+      </section>
     </main>
   );
 }
@@ -143,8 +148,7 @@ const Accordion = ({ i, expanded, setExpanded, data }: AccordionType) => {
             )}
           </AnimatePresence>
         </section>
-
-        <span className=" col-span-1">
+        <span className=" col-span-1 flex justify-end">
           <svg
             width="40"
             height="40"
@@ -154,11 +158,13 @@ const Accordion = ({ i, expanded, setExpanded, data }: AccordionType) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <motion.path
-            animate={{transform: isOpen ? 'rotate(-90deg)' : 'rotate(0deg)' }}
-            stroke="#141313"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+              animate={{
+                transform: isOpen ? "rotate(-90deg)" : "rotate(0deg)",
+              }}
+              stroke="#141313"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M20 6.66699V33.3337"
             />
             <path
