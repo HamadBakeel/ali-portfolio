@@ -53,7 +53,7 @@ function Services() {
   ];
 
   return (
-    <main className="w-full min-h-screen pt-24 pb-10 px-8 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl transition">
+    <main className="w-full min-h-screen pt-24 pb-10 px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl transition">
       <PageTitle text="Services"/>
       <PageSubtitle text="my specialties"/>
 

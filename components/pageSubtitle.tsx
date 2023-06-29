@@ -6,7 +6,7 @@ type PageSubtitleType={
 }
 function PageSubtitle({text, additionalClasses }: PageSubtitleType) {
   return (
-    <h2 className={"uppercase text-[2.5rem] font-bold " + additionalClasses}>{text}</h2>
+    <h2 className={"uppercase text-4xl font-bold " + additionalClasses}>{text}</h2>
   )
 }
 
