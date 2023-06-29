@@ -51,7 +51,7 @@ function Services() {
   ];
 
   return (
-    <main className="w-full min-h-screen py-24 px-8 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl transition">
+    <main className="w-full min-h-screen pt-24 pb-10 px-8 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl transition">
       <h1 className=" italic font-bold mb-1">Services</h1>
       <h2 className=" uppercase text-[2.5rem] font-bold">my specialties</h2>
 
@@ -86,24 +86,17 @@ type AccordionType = {
 
 const Accordion = ({ i, expanded, setExpanded, data }: AccordionType) => {
   const isOpen = i === expanded;
-  const [isAnimating, setIsAnimating] = useState(false);
-  const handleAnimationComplete = () => {
-    setIsAnimating(false);
-  };
 
   return (
     <>
       <motion.header
-        className={`grid grid-cols-12 relative rounded my-3 py-5 border-[#141313] border-b border-opacity-25 cursor-pointer`}
-        onClick={() => {
-          if (!isAnimating) {
-            setIsAnimating(true);
-            setExpanded(i);
-          }
-        }}
+        className={`grid grid-cols-12 relative rounded my-3 py-5 border-[#141313] border-b border-opacity-25 overflow-hidden
+          ${isOpen ? ' cursor-auto': ' cursor-pointer'}
+        `}
+        onClick={() => setExpanded(i)}
       >
         <h2
-          className={`col-span-5 text-sport-black text-3xl font-bold uppercase 
+          className={`col-span-11 md:col-span-5 order-1 text-sport-black text-2xl md:text-3xl font-bold uppercase 
           ${isOpen ? "text-gradient-custom" : ""}
         `}
         >
@@ -111,7 +104,7 @@ const Accordion = ({ i, expanded, setExpanded, data }: AccordionType) => {
           {data.title}
         </h2>
 
-        <section className="col-span-6">
+        <section className="col-span-12 md:col-span-6 order-3 md:order-2">
           <AnimatePresence initial={false} mode="wait">
             {!isOpen && (
               <motion.section
@@ -124,7 +117,7 @@ const Accordion = ({ i, expanded, setExpanded, data }: AccordionType) => {
                   collapsed: { opacity: 0, height: 0 },
                 }}
                 transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                onAnimationComplete={handleAnimationComplete}
+                
               >
                 {data.briefDescription}
               </motion.section>
@@ -141,14 +134,15 @@ const Accordion = ({ i, expanded, setExpanded, data }: AccordionType) => {
                   collapsed: { opacity: 0, height: 0 },
                 }}
                 transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                className="flex flex-col-reverse md:flex-col "
               >
                 <Image src={data.image} alt="" width={350} height={100} />
-                <p className=" text-sm mt-3">{data.description}</p>
+                <p className=" text-sm my-3 md:my-0 md:mt-3">{data.description}</p>
               </motion.section>
             )}
           </AnimatePresence>
         </section>
-        <span className=" col-span-1 flex justify-end">
+        <span className=" col-span-1 order-2 md:order-3 flex justify-end">
           <svg
             width="40"
             height="40"
