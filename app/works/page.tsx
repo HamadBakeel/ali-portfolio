@@ -2,8 +2,16 @@ import PageSubtitle from '@/components/pageSubtitle'
 import PageTitle from '@/components/pageTitle'
 import Image from 'next/image'
 import React from 'react'
+import TestimonialsSwiper from './components/TestimonialsSwiper'
 
 function Works() {
+
+type TestimonialType= {
+    message: string;
+    name: string;
+    work: string;
+  }
+  
 
   const works: WorkType[] = [
     {
@@ -36,8 +44,31 @@ function Works() {
     },
   ]
 
+  const testimonials: TestimonialType[] = [
+    {
+      message: '“ File storage made easy – including powerful features you won’t find anywhere else. Whether you’re.”',
+      name: '-Larry Diamond',
+      work: 'Chief Executive Officer, Besnik'
+    },
+    {
+      message: '“ File storage made easy – including powerful features you won’t find anywhere else. Whether you’re.”',
+      name: '-Larry Diamond',
+      work: 'Chief Executive Officer, Besnik'
+    },
+    {
+      message: '“ File storage made easy – including powerful features you won’t find anywhere else. Whether you’re.”',
+      name: '-Larry Diamond',
+      work: 'Chief Executive Officer, Besnik'
+    },
+    {
+      message: '“ File storage made easy – including powerful features you won’t find anywhere else. Whether you’re.”',
+      name: '-Larry Diamond',
+      work: 'Chief Executive Officer, Besnik'
+    },
+  ]
+
   return (
-    <main className="w-full min-h-screen pt-24 px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl">
+    <main className="w-full min-h-screen pt-24 pb-20 px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl">
       <PageTitle text='Work'/>
       <PageSubtitle text="recent projects"/>
 
@@ -45,6 +76,22 @@ function Works() {
         {works.map(work => (
           <Work key={work.id} id={work.id} title={work.title} type={work.type} image={work.image} link={work.link}/>
         ))}
+      </section>
+
+      <section className=' bg-gradient-custom px-16 pb-10 pt-20'>
+        <PageTitle text="Testimonials" additionalClasses='text-white text-center'/>
+        <PageSubtitle text='what they say' additionalClasses='text-white text-center'/>
+        
+        
+        <div className='grid grid-cols-12 space-x-10 border-b border-white mt-8'>
+
+          <div className="col-span-5">
+            <Image className='w-[85%] ' src='/assets/images/testimonials-person-image.svg' alt='' width={10} height={10}/>
+          </div>
+          <div className="col-span-7 mb-8">
+          <TestimonialsSwiper data={testimonials}/>
+          </div>
+        </div>
       </section>
     </main>
   )
