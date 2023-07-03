@@ -1,0 +1,21 @@
+<svg width="234" height="243" viewBox="0 0 234 243" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 468">
+<path id="Ellipse 193" d="M60.5924 127.776C103.891 127.776 138.992 92.6756 138.992 49.3767C138.992 30.6622 132.435 13.4793 121.493 0L0 99.1303C14.3787 116.621 36.1828 127.776 60.5924 127.776Z" fill="url(#paint0_linear_508_921)"/>
+<g id="Rectangle 80" filter="url(#filter0_b_508_921)">
+<rect x="43.2529" y="51.6406" width="190.722" height="190.722" fill="white" fill-opacity="0.3"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_b_508_921" x="15.171" y="23.5587" width="246.886" height="246.886" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="14.041"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_508_921"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_508_921" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_508_921" x1="44.6094" y1="81" x2="129.239" y2="71.6454" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFB147"/>
+<stop offset="0.520264" stop-color="#FF6C63"/>
+<stop offset="1" stop-color="#B86ADF"/>
+</linearGradient>
+</defs>
+</svg>

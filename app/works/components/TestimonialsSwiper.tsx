@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "../style.css";
 
-import { Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 
 type TestimonialType = {
   message: string;
@@ -21,14 +21,14 @@ type PropsType = {
 function TestimonialsSwiper({data}: PropsType) {
   return (
     <>
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+      <Swiper navigation={true} autoplay modules={[Navigation, Autoplay]} loop className="testimonialsSwiper">
         {
           data.map((item, id) => {
             return (
               <SwiperSlide key={id} className="text-white !flex flex-col justify-center items-start">
-                <h3 className=" italic text-xl font-semibold mb-6">{item.message}</h3>
-                <h2 className=" font-semibold mb-1">{item.name}</h2>
-                <h4 className="text-xs">{item.work}</h4>
+                <h3 className=" italic text-xl font-semibold mb-6 mt-8 md:mt-0 text-center md:text-start">{item.message}</h3>
+                <h2 className=" font-semibold m-auto md:m-0 text-lg md:text-base">{item.name}</h2>
+                <h4 className="text-base md:text-xs m-auto md:m-0">{item.work}</h4>
               </SwiperSlide>
             )
           })

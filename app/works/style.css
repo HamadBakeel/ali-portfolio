@@ -1,6 +1,8 @@
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  overflow-y: visible;
+  overflow-x: hidden;
   }
 
   .swiper-button-next{
@@ -26,3 +28,26 @@
     font-size: small;
     font-weight: bolder;
   }
+
+  @media  (max-width: 1100px) {
+    .testimonialsSwiper.swiper {
+      padding-bottom: 70px;
+    }
+  }
+  @media (max-width: 768px) {
+    .swiper-button-next, .swiper-button-prev{
+      bottom: 0px;
+      transform: translateX(-50%);
+    }
+    .swiper-button-next{
+      left: 60%;
+    }
+    .swiper-button-prev{
+      left: 40%;
+    }
+  }
+
+.customersSwiper  .swiper-wrapper {
+    transition-timing-function: linear;
+  }
+  
