@@ -82,7 +82,7 @@ function Works() {
         additionalClasses="px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw]"
       />
 
-      <section className="my-8 grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-28 px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw]">
+      <section className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-28 px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw]">
         {works.map((work) => (
           <Work
             key={work.id}
@@ -117,7 +117,7 @@ function Works() {
         </div>
       </section>
 
-      <section className=" bg-gradient-custom pt-6 md:p-16 pb-14 md:mt-24 md:mx-[3vw] lg:mx-[5vw] xl:mx-[7vw]">
+      <section className=" bg-gradient-custom pt-6 md:p-16 pb-14 md:mt-16 md:mx-[3vw] lg:mx-[5vw] xl:mx-[7vw]">
         <PageTitle
           text="Testimonials"
           additionalClasses="text-white text-center"
