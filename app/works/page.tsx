@@ -73,8 +73,14 @@ function Works() {
   const customers = ["wajabat", "otek", "marasi", "one-graphics", "yemenia"];
   return (
     <main className="w-full min-h-screen max-w-screen-xl pt-24 md:pb-20">
-      <PageTitle text="Work" additionalClasses="px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw]"/>
-      <PageSubtitle text="recent projects" additionalClasses="px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw]"/>
+      <PageTitle
+        text="Work"
+        additionalClasses="px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw]"
+      />
+      <PageSubtitle
+        text="recent projects"
+        additionalClasses="px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw]"
+      />
 
       <section className="my-8 grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-28 px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw]">
         {works.map((work) => (
@@ -87,9 +93,31 @@ function Works() {
             link={work.link}
           />
         ))}
+
+        <div className="col-span-1 md:col-span-2 flex justify-center">
+          <a
+          href="#"
+            className="
+          bg-sport-black border 
+          hover:bg-white hover:text-black transition text-white
+           text-lg md:text-sm  tracking-wide
+           inline-flex justify-center items-center gap-2
+           mb-6 px-8 py-4 md:px-6 md:py-2
+          "
+          >
+            Load More
+            <Image
+              className=" w-[25px] md:w-[20px]"
+              src="/assets/icons/colored-arrow.svg"
+              alt=""
+              width={15}
+              height={15}
+            />
+          </a>
+        </div>
       </section>
 
-      <section className=" bg-gradient-custom pt-6 md:p-16 pb-14 mt-24 md:mx-[3vw] lg:mx-[5vw] xl:mx-[7vw]">
+      <section className=" bg-gradient-custom pt-6 md:p-16 pb-14 md:mt-24 md:mx-[3vw] lg:mx-[5vw] xl:mx-[7vw]">
         <PageTitle
           text="Testimonials"
           additionalClasses="text-white text-center"
@@ -109,20 +137,20 @@ function Works() {
               height={10}
             />
             <div className="md:hidden isolate relative">
-            <Image
-              className="w-[60%] m-auto"
-              src="/assets/images/testimonials-person-image-mobile.png"
-              alt=""
-              width={100}
-              height={100}
-            />
-            <Image
-              className="h-[95%] w-full absolute bottom-0 -left-5 -z-10"
-              src="/assets/images/testimonials-person-shape-mobile.svg"
-              alt=""
-              width={10}
-              height={10}
-            />
+              <Image
+                className="w-[60%] m-auto"
+                src="/assets/images/testimonials-person-image-mobile.png"
+                alt=""
+                width={100}
+                height={100}
+              />
+              <Image
+                className="h-[95%] w-full absolute bottom-0 -left-5 -z-10"
+                src="/assets/images/testimonials-person-shape-mobile.svg"
+                alt=""
+                width={10}
+                height={10}
+              />
             </div>
           </div>
           <div className="md:col-span-7 col-span-12 md:mb-8">
@@ -145,7 +173,7 @@ function Works() {
           })}
         </div>
         <div className="md:hidden">
-          <CustomersSwiper data={customers}/>
+          <CustomersSwiper data={customers} />
         </div>
       </section>
     </main>
