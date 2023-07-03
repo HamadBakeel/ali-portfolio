@@ -67,6 +67,13 @@ type TestimonialType= {
     },
   ]
 
+  const customers  =[
+    'wajabat',
+    'otek',
+    'marasi',
+    'one-graphics',
+    'yemenia',
+  ]
   return (
     <main className="w-full min-h-screen pt-24 pb-20 px-6 md:px-[3vw] lg:px-[5vw] xl:px-[7vw] max-w-screen-xl">
       <PageTitle text='Work'/>
@@ -78,7 +85,7 @@ type TestimonialType= {
         ))}
       </section>
 
-      <section className=' bg-gradient-custom px-16 pb-10 pt-20'>
+      <section className=' bg-gradient-custom px-16 pt-20'>
         <PageTitle text="Testimonials" additionalClasses='text-white text-center'/>
         <PageSubtitle text='what they say' additionalClasses='text-white text-center'/>
         
@@ -91,6 +98,17 @@ type TestimonialType= {
           <div className="col-span-7 mb-8">
           <TestimonialsSwiper data={testimonials}/>
           </div>
+        </div>
+        <div className='flex gap-6 justify-between max-w-full py-8'>
+          {
+            customers.map((customer) =>{
+              return (
+                <div className=' w-auto h-12 max-w-[30%]' key={customer}>
+                <Image className=' w-full h-full'  src={`/assets/icons/customers/${customer}.svg`} alt='' width={10} height={100}/>
+                </div>
+              )
+            })
+          }
         </div>
       </section>
     </main>
