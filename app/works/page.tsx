@@ -110,8 +110,8 @@ function Works() {
               className=" w-[25px] md:w-[20px]"
               src="/assets/icons/colored-arrow.svg"
               alt=""
-              width={15}
-              height={15}
+              width={150}
+              height={150}
             />
           </a>
         </div>
