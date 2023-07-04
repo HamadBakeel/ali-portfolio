@@ -23,12 +23,6 @@ function Blogs() {
       image: "/assets/images/blog-3.png",
       link: "#",
     },
-    {
-      date: "UX case study",
-      title: "Bally website research",
-      image: "/assets/images/blog-1.png",
-      link: "#",
-    },
   ];
 
   return (
