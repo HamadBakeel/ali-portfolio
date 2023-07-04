@@ -142,7 +142,7 @@ function About() {
         "
         style={{
           background:
-            "linear-gradient(273deg, #FFB147 0%, #FF6C63 52.03%, #B86ADF 100%);",
+            "linear-gradient(273deg, #FFB147 0%, #FF6C63 52.03%, #B86ADF 100%)",
         }}
       >
         <div className=" col-span-5">
