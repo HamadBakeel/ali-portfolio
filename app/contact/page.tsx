@@ -37,22 +37,39 @@ export default function Home() {
     },
   ];
   return (
-    <main className="grid grid-cols-1 md:grid-cols-12 space-x-28 w-full min-h-screen items-center justify-items-center px-[18px] py-[80px] md:px-[4vw] lg:px-[6vw] xl:px-[10vw] md:py-0">
-      <section className=" col-span-4 ">
-        <PageTitle text="Contact" />
-        <PageSubtitle text="reach me out" additionalClasses="mt-2 mb-4" />
-        <p className="text-sm">
+    <main
+      className="grid grid-cols-1 md:grid-cols-12 min-h-screen w-full items-center justify-items-center 
+    px-5 pt-[80px] md:px-[4vw] lg:px-[6vw] xl:px-[6vw]"
+    >
+      <PageTitle text="Contact" additionalClasses="block md:hidden md:col-span-12 w-full" />
+      <PageSubtitle
+        text="reach me out"
+        additionalClasses="mt-2 mb-4 block md:hidden md:col-span-12 w-full"
+      />
+      <section className=" col-span-1 md:col-span-4 order-2 md:order-1 w-full pb-8 md:pb-0">
+      <PageTitle text="Contact" additionalClasses="col-span-1 hidden md:block w-full" />
+      <PageSubtitle
+        text="reach me out"
+        additionalClasses="mt-2 mb-6 col-span-1 hidden md:block w-full"
+      />
+        <p className="text-base md:text-xs font-medium">
           249 king Sir, 05th Floor, Ultra House Building, <br />
           Melboune, VIC 3000, London.
         </p>
 
-        <h4 className="text-2xl font-bold mt-16 mb-1">+966 359 797 355</h4>
-        <h4 className="text-2xl font-bold">uxali@outlook.com</h4>
+        <h4 className="text-xl md:text-2xl font-bold mt-8 md:mt-16 md:mb-1">
+          +966 359 797 355
+        </h4>
+        <h4 className="text-xl md:text-2xl font-bold">uxali@outlook.com</h4>
 
-        <div className="flex gap-4 mt-14">
+        <div className="flex justify-between md:justify-start md:gap-4 w-full mt-8 md:mt-14">
           {socialMedia.map((item, id) => {
             return (
-              <a className="text-xs font-semibold" href={item.link} key={id}>
+              <a
+                className="text-base md:text-xs font-semibold"
+                href={item.link}
+                key={id}
+              >
                 {item.name.toUpperCase()}
               </a>
             );
@@ -60,8 +77,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="col-span-8 bg-gradient-custom px-12 py-10 w-full">
-        <h2 className="text-white text-3xl font-bold uppercase">Any project</h2>
+      <section className="col-span-1 md:col-span-8 bg-gradient-custom pl-6 pr-12 md:px-12 py-10 -mx-5 md:mx-0 w-[112%] md:w-full order-1 md:order-2 mb-14 md:mb-0">
+        <h2 className="text-white text-2xl md:text-3xl font-bold uppercase">
+          Any project
+        </h2>
         <form
           id="form"
           className="grid grid-cols-1 md:grid-cols-2 gap-x-8 mt-7"
@@ -73,15 +92,18 @@ export default function Home() {
               name="name"
               placeholder=" "
               required
-              className="pt-2 pb-1 block w-full px-0 mt-0 bg-transparent border-b-[1.5px] border-white appearance-none focus:outline-none focus:ring-0 text-white"
+              className="pt-3 pb-2 md:pt-2 block w-full px-0 mt-0 bg-transparent border-b-[1.5px] border-white appearance-none focus:outline-none focus:ring-0 text-white"
             />
             <label
               htmlFor="name"
-              className="absolute duration-300 top-3 -z-1 origin-0 text-white text-sm uppercase"
+              className="absolute duration-300 top-3 -z-1 origin-0 text-white text-base md:text-sm uppercase"
             >
               Name
             </label>
-            <span className="text-sm text-red-600 hidden" id="error">
+            <span
+              className="text-base md:text-sm text-red-600 hidden"
+              id="error"
+            >
               Name is required
             </span>
           </div>
@@ -91,36 +113,42 @@ export default function Home() {
               type="email"
               name="email"
               placeholder=" "
-              className="pt-2 pb-1 block w-full px-0 mt-0 bg-transparent border-b-[1.5px] border-white appearance-none focus:outline-none focus:ring-0 text-white"
+              className="pt-3 pb-2 md:pt-2 block w-full px-0 mt-0 bg-transparent border-b-[1.5px] border-white appearance-none focus:outline-none focus:ring-0 text-white"
             />
             <label
               htmlFor="email"
-              className="absolute duration-300 top-3 -z-1 origin-0 text-white text-sm uppercase"
+              className="absolute duration-300 top-3 -z-1 origin-0 text-white text-base md:text-sm uppercase"
             >
               Email
             </label>
-            <span className="text-sm text-red-600 hidden" id="error">
+            <span
+              className="text-base md:text-sm text-red-600 hidden"
+              id="error"
+            >
               Email address is required
             </span>
           </div>
 
-          <div className="relative z-0 w-full mb-3 mt-6 col-span-1 md:col-span-2">
+          <div className="relative z-0 w-full mb-8 md:mb-3 mt-6 col-span-1 md:col-span-2">
             <textarea
               name="message"
               rows={3}
-              className="pt-2 pb-1 resize-none block w-full px-0 mt-0 bg-transparent border-b-[1.5px] border-white appearance-none focus:outline-none  text-white"
+              className="pt-3 pb-2 md:pt-2 resize-none block w-full px-0 mt-0 bg-transparent border-b-[1.5px] border-white appearance-none focus:outline-none  text-white"
             />
             <label
               htmlFor="message"
-              className="absolute duration-300 top-3 -z-1 origin-0 text-white text-sm uppercase"
+              className="absolute duration-300 top-3 -z-1 origin-0 text-white text-base md:text-sm uppercase"
             >
               Message
             </label>
-            <span className="text-sm text-red-600 hidden" id="error">
+            <span
+              className="text-base md:text-sm text-red-600 hidden"
+              id="error"
+            >
               Email address is required
             </span>
           </div>
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-2 mb-8">
             <label
               htmlFor="upload"
               className="flex items-center gap-2 cursor-pointer text-white"
@@ -162,7 +190,7 @@ export default function Home() {
           bg-sport-black
           hover:bg-opacity-75 transition text-white
            md:text-sm flex justify-center items-center gap-2
-           px-4 py-4 md:px-6 md:py-2 mt-2 md:mt-7
+           px-8 py-4 md:px-6 md:py-2 mt-2 md:mt-7
           "
             >
               Submit now
